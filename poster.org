@@ -1,27 +1,29 @@
 # Gemini theme
 #+startup: beamer
-# #+OPTIONS: email:nil toc:nil num:nil author:nil date:t tex:t title:nil
-#+OPTIONS: email:nil toc:nil num:nil date:nil tex:t title:nil
 #+TITLE: Exploring relationships amogst gene functions using JUMP Cell Painting Consortium data
 #+AUTHOR: Alán F. Muñoz and Anne Carpenter, in behalf of the Imaging Platform
 #+BEAMER_HEADER: \institute{Broad Institute}
-# #+DATE: 2023-11-24
+
+# #+BEAMER_HEADER: \logo{\includegraphics[height=8]{logos/broad_logo.png}\vspace{220pt}\hspace{0.5cm}}
+# #+BEAMER_HEADER: \logo{\includegraphics[height=8cm]{logos/broad_logo.png}\vspace{60cm}}
+#+OPTIONS: toc:nil num:nil date:nil tex:t title:nil author:t email:nil
 #+LATEX_CLASS: mybeamerposter
 #+BEAMER_THEME: gemini
 #+BEAMER_COLOR_THEME: gemini
-#+bibliography: references.bib
-# #+cite_export: csl apa.csl
-#+cite_export: csl
-# https://github.com/anishathalye/gemini
 
 # * Lengths :ignore:
 # # If you have N columns, choose \sepwidth and \colwidth such that
 # # (N+1)*\sepwidth + N*\colwidth = \paperwidth
-\newlength{\sepwidth}
-\newlength{\colwidth}
-\setlength{\sepwidth}{0.025\paperwidth}
-\setlength{\colwidth}{0.3\paperwidth}
-\newcommand{\separatorcolumn}{\begin{column}{\sepwidth}\end{column}}
+# #+LATEX_HEADER: \newlength{\sepwidth}
+# #+LATEX_HEADER: \newlength{\colwidth}
+# #+LATEX_HEADER: \setlength{\sepwidth}{0.025\paperwidth}
+# #+LATEX_HEADER: \setlength{\colwidth}{0.3\paperwidth}
+# #+LATEX_HEADER: \newcommand{\separatorcolumn}{\begin{column}{\sepwidth}\end{column}}
+
+#+bibliography: references.bib
+# #+cite_export: csl apa.csl
+#+cite_export: csl
+# https://github.com/anishathalye/gemini
 
 # * Footer (Optional) :ignore:
 # \footercontent{
@@ -30,69 +32,70 @@
 #   \href{mailto:alyssa.p.hacker@example.com}{alyssa.p.hacker@example.com}}
 # # (can be left out to remove footer)
 
-# * Logo (Optional) :ignore:
-# # # use this to include logos on the left and/or right side of the header:
-# # # \logoright{\includegraphics[height=7cm]{logo1.pdf}}
-# # # \logoleft{\includegraphics[height=7cm]{logo2.pdf}}
+* Logo (Optional) :ignore:
+# use this to include logos on the left and/or right side of the header:
+
+#+BEAMER_HEADER: \logoright{\includegraphics[height=5cm]{logos/broad_logo.png}}
+
+# # \logoleft{\includegraphics[height=7cm]{logo2.pdf}}
 
 # # # ====================
 # # # Body
 # # # ====================
 
-* @@latex:@@
-** @@latex:@@ :B_COL:
+* @@latex:@@ :B_fullframe:
 :PROPERTIES:
-:BEAMER_env: block
+:BEAMER_ENV: fullframe
+:END:
+
+** @@latex:@@ :BMCOL:
+:PROPERTIES:
 :BEAMER_col: 0.3
 :END:
-*** Abstract :BMCOL:
+*** Abstract
 With the Cell Painting assay we quantify cell morphology using six dyes to stain eight cellular components: Nucleus, mitochondria, endoplasmic reticulum, nucleoli, cytoplasmic RNA, actin, golgi aparatus, and plasma membrane. After high-throughput fluorescence microscopy, image analysis algorithms then extract thousands of morphological features from each single cell’s image. By comparing of these “profiles” we can can uncover new relationships among genetic and chemical perturbations.
 
 This year, the JUMP-CP Consortium (Joint Undertaking for Morphological Profiling-Cell Painting) released the first public high-throughput dataset with over 140,000 genetic and chemical perturbations [cite:@chandrasekaranJUMPCellPainting2023].
 
 Here, we describe how this data can now be used to answer many biological questions. Researchers can pick any gene of interest and find (a) what morphological phenotypes are induced when it is knocked-out or overexpressed, (b) what genes produce a similar morphological profile when altered, uncovering functional relationships, and (c) what chemical compounds produce similar morphological profiles, thus alludding to their target pathway. Novel software tools developed for this dataset empower biologists to make discoveries of their own, and we show that mining this dataset can yield novel insights into current and relevant biological questions.
 
-    
-*** Goal :BMCOL:
+*** Goal
 :PROPERTIES:
 :BEAMER_env: alertblock
 :END:
 
-- Compare growth
+- Develop a tool for biologists to discover candidates that produce phenotypes akin to the ones in their genes or compounds of interest
 - Be happy
 
-*** Methods :BMCOL:
+*** Eight cellular components are stained using six dyes and imaged in five channels
+#+ATTR_LATEX: :width 0.9\textwidth
 [[file:figs/cellpainting.png]]
-[[file:figs/cell_painting_overview.png]]
 
-** @@latex:@@ :B_COL:
+
+** @@latex:@@ :BMCOL:
 :PROPERTIES:
-:BEAMER_env: block
 :BEAMER_col: 0.3
 :END:
 
-*** Results
+*** Features were extracted and we evaluated the resultant profiles
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+We generated a database from these cell painting
+[[file:figs/cell_painting_overview.png]]
+
+*** The re
 :PROPERTIES:
 :BEAMER_env: block
 :END:
 
-
-*** Discussion
+*** Next steps
 :PROPERTIES:
 :BEAMER_env: block
 :END:
 
-
-*** Future work
+** @@latex:@@ :BMCOL:
 :PROPERTIES:
-:BEAMER_env: block
-:END:
-
--
-
-** @@latex:@@ :B_COL:
-:PROPERTIES:
-:BEAMER_env: block
 :BEAMER_col: 0.3
 :END:
 *** Conclusions :B_exampleblock:
@@ -104,6 +107,7 @@ Here, we describe how this data can now be used to answer many biological questi
 **** The JUMP Cell Painting can serve as a resource to further existing research
 
 **** Another heading inside a block
+
 
 
 *** Future work
@@ -124,6 +128,13 @@ Subset of list of genes with potential for association of novel discoveries base
 | MMP9                             | Alzheimer           |
 
 Mid-term, we aim to provide a Python library and web interface to not only access the gene names and synonyms, but also access existing annotations on functions and candidates that are related.
+
+
+*** Acknowledgements
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+[[file:figs/jump_partners.png]]
 
 *** References
 :PROPERTIES:
