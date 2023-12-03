@@ -1,6 +1,6 @@
 # Gemini theme
 #+startup: beamer
-#+TITLE: Exploring relationships amogst gene functions using JUMP Cell Painting Consortium data
+#+TITLE: Exploring relationships between gene functions using JUMP Cell Painting Consortium data
 #+AUTHOR: Alán F. Muñoz and Anne Carpenter, in behalf of the JUMP Cell-Painting Consortium
 #+BEAMER_HEADER: \institute{Broad Institute of Harvard and MIT}
 
@@ -25,10 +25,8 @@
 * Logo (Optional) :ignore:
 # use this to include logos on the left and/or right side of the header:
 
-#+BEAMER_HEADER: \logoright{\includegraphics[height=4cm]{logos/broad_logo.png}}
+#+BEAMER_HEADER: \logoright{\includegraphics[height=5cm]{logos/broad_logo.png}}
 # #+BEAMER_HEADER: \logoleft{\includesvg[height=4cm]{logos/broad_logo.svg}}
-
-# # \logoleft{\includegraphics[height=7cm]{logo2.pdf}}
 
 # # # ====================
 # # # Body
@@ -48,18 +46,19 @@ With the Cell Painting assay we quantify cell morphology using six dyes to stain
 
 This year, the JUMP-CP Consortium (Joint Undertaking for Morphological Profiling-Cell Painting) released the first public high-throughput dataset with over 140,000 genetic and chemical perturbations [cite:@chandrasekaranJUMPCellPainting2023].
 
-Here, we describe how this data can now be used to answer many biological questions. Researchers can pick any gene of interest and find (a) what morphological phenotypes are induced when it is knocked-out or overexpressed, (b) what genes produce a similar morphological profile when altered, uncovering functional relationships, and (c) what chemical compounds produce similar morphological profiles, thus alludding to their target pathway. Novel software tools developed for this dataset empower biologists to make discoveries of their own, and we show that mining this dataset can yield novel insights into current and relevant biological questions.
+Here, we describe how this data can now be used to answer many biological questions. Researchers can pick any gene of interest and find what morphological phenotypes are induced when it is knocked-out or overexpressed and what genes produce a similar morphological profile when altered, uncovering functional relationships. Novel software tools developed for this dataset empower biologists to make discoveries of their own, and we show that mining this dataset can yield novel insights into current and relevant biological questions.
 
 *** Goals
 :PROPERTIES:
 :BEAMER_env: exampleblock
 :END:
 
-\heading{Find a way to interpret profile-based datasets to yield useful biological insight}
-\heading{Develop a tool/workflow for biologists to discover candidates that may produce similar phenotypes to the ones they study}
+\heading{Device methods to interpret profile-based datasets to yield useful biological insight.}
+\heading{Develop a tool/workflow for biologists to discover genes that result in phenotypes similar to theirs.}
+\heading{Build a stepping stone for a universal and accessible framework against which biologists can validate cell phenotypes.}
 
 *** We use data from the Cell Painting assay, in which eight cellular components are stained using six dyes and imaged in five channels
-#+ATTR_LATEX: :width 0.9\textwidth
+#+ATTR_LATEX: :width 0.8\textwidth
 [[file:figs/cellpainting.png]]
 
 
@@ -68,60 +67,75 @@ Here, we describe how this data can now be used to answer many biological questi
 :BEAMER_col: 0.3
 :END:
 
-*** Features were extracted and we evaluated the resultant profiles
-:PROPERTIES:
-:BEAMER_env: block
-:END:
+*** Morphological profiles were generated at a high-throughput scale
 We generated and preprocessed a database composed of thousands of cell painting experiments.
 [[file:figs/cell_painting_overview.png]]
 
-*** We can then query candidate genes to see what produces a similar morphology
+*** We generated a reference dataset for cells and features that indicates clustered groups of genes
 :PROPERTIES:
 :BEAMER_env: block
 :END:
-This elucidates groups of genes that interact or share regulation mechanisms.
-**** Clustering
-:PROPERTIES:
-:BEAMER_col: 0.4
-:END:
-# #+ATTR_LATEX: :width 0.4\textwidth
-[[file:figs/clustermap.png]]
-
-**** Rank query
+It becomes possible to query individual genes and find similar profiles.
+**** Cell vs Features
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-# #+ATTR_LATEX: :width 0.4\textwidth
+[[file:figs/clustermap_cells_features.png]]
+**** Cell correlations
+:PROPERTIES:
+:BEAMER_col: 0.45
+:END:
+[[file:figs/clustermap_correlation.png]]
+
+*** We then proceed to find morphological features that link genes closely
+1. Find the most correlated and anticorrelated genes.
+2. Find the features that show highest variance between these correlated/anticorrelated candidates.
+3. Use these feature to guide comparisons between perturbed cells and negative controls.
+**** Gene ranking
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
 [[file:figs/scatter_ranked.png]]
-*** For a given gene of interest we use correlation to find other candidates
+**** Feature ranking
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+[[file:figs/ranked_features.png]]
 
 ** @@latex:@@ :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.3
 :END:
-*** We confirm morphological phenotypes visualising the original images
+*** Using these morphological features eases discovering novel insights
 :PROPERTIES:
 :BEAMER_env: block
 :END:
 We compare images using tools that decompose the channels to focus on the most important features obtained from data mining
 **** Perturbation
 :PROPERTIES:
-:BEAMER_col: 0.4
+:BEAMER_col: 0.45
 :END:
 [[file:figs/example_MYT1.jpg]]
+#+BEGIN_CENTER
+MYT1 deletion
+#+END_CENTER
 **** Control
 :PROPERTIES:
-:BEAMER_col: 0.4
+:BEAMER_col: 0.45
 :END:
 [[file:figs/example_control.jpg]]
+#+BEGIN_CENTER
+Control
+#+END_CENTER
 
 *** Conclusions :B_exampleblock:
 :PROPERTIES:
 :BEAMER_env: alertblock
 :END:
 
-\heading{The JUMP Cell Painting can serve as a resource to further existing research}
-\heading{A combination of computational and biological expertise can accelerate drug/mechanism discovery}
+\heading{The JUMP Cell Painting can serve as a resource to obtain candidate genes to find further insight on genes or proteins of interest.}
+\heading{A combination of computational and biological expertise can accelerate drug/mechanism discovery.}
+\heading{Even high throughput analyses require biological expertise to provide novel insights.}
 
 
 
@@ -134,20 +148,19 @@ We compare images using tools that decompose the channels to focus on the most i
 - Incorporate compound data for bidirectional queries
 - Explore further promising candidates, based on collaborators' work:
 
-Subset of list of genes with potential for association of novel discoveries based on collaborators' experience.
+| Gene/compound  \nbsp{}\nbsp{} | Phenotype/disease |
+|-------------------------------+-------------------|
+| MYT1/RNF41                    | Neuronal fate     |
+| MUC1                          | Cancer            |
+| PDE Inhibitors                | Cancer treatment  |
+| CTDNEP1                       | Nuclear structure |
+| MMP9                          | Alzheimer         |
 
-|----------------------------------+---------------------|
-| Gene, compound or mechanism(s)   | Phenotype/disease   |
-|----------------------------------+---------------------|
-| MYT1/RNF41                       |                     |
-| MUC1                             | Cancer              |
-| PDE Inhibitors                   | Cancer treatment    |
-| Sirolimus                        | Cancer treatment    |
-| CTDNEP1                          |                     |
-| MDR1                             |                     |
-| MMP9                             | Alzheimer           |
+- Release a public tool for scientists to query their own profiles and access existing ones to design their experiments.
 
-- Release a public tool with which scientists can query their own  or profiles, but also access existing annotations on functions and candidates that are related.
+#+BEGIN_QUOTE
+More info and updates at =broad.io/jump-cellpainting=
+#+END_QUOTE
 
 # *** Acknowledgements
 # :PROPERTIES:
@@ -160,4 +173,5 @@ Subset of list of genes with potential for association of novel discoveries base
 :PROPERTIES:
 :BEAMER_env: block
 :END:
+
 #+print_bibliography:
