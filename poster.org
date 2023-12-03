@@ -162,13 +162,6 @@ Control
 More info and updates at =broad.io/jump-cellpainting=
 #+END_QUOTE
 
-# *** Acknowledgements
-# :PROPERTIES:
-# :BEAMER_env: block
-# :END:
-# #+ATTR_LATEX: :width 0.7\textwidth
-# [[file:figs/jump_partners.png]]
-
 *** References
 :PROPERTIES:
 :BEAMER_env: block
