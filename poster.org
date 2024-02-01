@@ -164,10 +164,8 @@ Control
 | CTDNEP1                       | Nuclear structure |
 | MMP9                          | Alzheimer         |
 
-- Release a public tool for scientists to query their own profiles and access existing ones to design their experiments.
-
 #+BEGIN_QUOTE
-More info and updates at =broad.io/jump-cellpainting=
+More info and updates at [[http://broad.io/explore-jump][broad.io/explore-jump]] for tools and [[https://broad.io/jump-cellpainting][broad.io/jump-cellpainting]] for more information.
 #+END_QUOTE
 
 *** References
