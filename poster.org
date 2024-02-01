@@ -75,7 +75,7 @@ We generated and preprocessed a database composed of thousands of cell painting 
 :PROPERTIES:
 :BEAMER_env: block
 :END:
-It becomes possible to query individual genes and find similar profiles.
+After applying batch correction [cite:@arevaloEvaluatingBatchCorrection2023], it becomes possible to query individual genes and find similar profiles.
 **** Cell vs Features
 :PROPERTIES:
 :BEAMER_col: 0.5
@@ -96,12 +96,12 @@ It becomes possible to query individual genes and find similar profiles.
 :BEAMER_col: 0.5
 :END:
 [[file:figs/scatter_ranked.png]]
+
 **** Feature ranking
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
 [[file:figs/ranked_features.png]]
-
 *** We provide web interface for data exploration
 :PROPERTIES:
 :BEAMER_env: block
