@@ -102,6 +102,12 @@ It becomes possible to query individual genes and find similar profiles.
 :END:
 [[file:figs/ranked_features.png]]
 
+*** We provide web interface for data exploration
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+We made available multiple web assembly resources for scientist to access the morphology of genetic perturbations and other causes of similar morphologies.
+[[file:figs/web_interface.png]]
 ** @@latex:@@ :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.3
