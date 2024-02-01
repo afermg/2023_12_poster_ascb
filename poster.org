@@ -1,17 +1,18 @@
 # Gemini theme
 #+startup: beamer
-#+TITLE: Exploring relationships between gene functions using JUMP Cell Painting Consortium data
+#+TITLE: Exploring gene function and morphology using JUMP Cell Painting Consortium data
 #+AUTHOR: Alán F. Muñoz and Anne Carpenter, in behalf of the JUMP Cell-Painting Consortium
 #+BEAMER_HEADER: \institute{Broad Institute of Harvard and MIT}
 
-#+OPTIONS: toc:nil num:nil date:nil tex:t title:nil author:t email:nil
-#+LATEX_CLASS: mybeamerposter
+#+OPTIONS: toc:nil num:nil date:nil tex:t title:nil author:t email:nil ^:nil
+#+LATEX_CLASS: beamerposter
 #+BEAMER_THEME: gemini
 #+BEAMER_COLOR_THEME: gemini
 #+LATEX_HEADER: \usepackage{svg}
+#+BEAMER_HEADER: \definecolor{links}{HTML}{2A1B81}
+#+BEAMER_HEADER: \hypersetup{colorlinks,linkcolor=,urlcolor=links, citecolor=black}
 
 #+bibliography: references.bib
-# #+cite_export: csl apa.csl
 #+cite_export: csl
 # https://github.com/anishathalye/gemini
 
@@ -131,22 +132,24 @@ Control
 :PROPERTIES:
 :BEAMER_env: alertblock
 :END:
-
 \heading{The JUMP Cell Painting can serve as a resource to obtain candidate genes to find further insight on genes or proteins of interest.}
-\heading{A combination of computational and biological expertise can accelerate drug/mechanism discovery.}
+\heading{We provide web interfaces to retrieve important from gene queries.}
 \heading{Even high throughput analyses require biological expertise to provide novel insights.}
 
-
-
-*** Next Steps
+*** Available resources
 :PROPERTIES:
 :BEAMER_env: block
 :END:
+| Dataset  | Similarity      | Outstanding features | Description         |
+|----------+-----------------+----------------------+---------------------|
+| ORF      | [[https://broad.io/orf][broad.io/orf]]    | [[https://broad.io/orf_feature][broad.io/orf_feature]] | Gene overexpression |
+| CRISPR   | [[https://broad.io/crispr][broad.io/crispr]] | [WIP]                | Gene knock-out      |
+| Compound | [WIP]           | [WIP]                | Chemical compounds  |
 
-- Perform new experiments to confirm found candidates
-- Incorporate compound data for bidirectional queries
-- Explore further promising candidates, based on collaborators' work:
-
+*** Ongoing research
+:PROPERTIES:
+:BEAMER_env: block
+:END:
 | Gene/compound  \nbsp{}\nbsp{} | Phenotype/disease |
 |-------------------------------+-------------------|
 | MYT1/RNF41                    | Neuronal fate     |
