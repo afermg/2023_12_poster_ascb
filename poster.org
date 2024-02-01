@@ -1,6 +1,6 @@
 # Gemini theme
 #+startup: beamer
-#+TITLE: Exploring gene function and morphology using JUMP Cell Painting Consortium data
+#+Title: Exploring gene function and morphology using JUMP Cell Painting Consortium data
 #+AUTHOR: Alán F. Muñoz and Anne Carpenter, in behalf of the JUMP Cell-Painting Consortium
 #+BEAMER_HEADER: \institute{Broad Institute of Harvard and MIT}
 
@@ -75,7 +75,7 @@ We generated and preprocessed a database composed of thousands of cell painting 
 :PROPERTIES:
 :BEAMER_env: block
 :END:
-After applying batch correction [cite:@arevaloEvaluatingBatchCorrection2023], it becomes possible to query individual genes and find similar profiles.
+After applying batch correction, it becomes possible to query individual genes and find similar profiles.
 **** Cell vs Features
 :PROPERTIES:
 :BEAMER_col: 0.5
@@ -119,7 +119,7 @@ We made available multiple web assembly resources for scientist to access the mo
 We compare images using tools that decompose the channels to focus on the most important features obtained from data mining
 **** Perturbation
 :PROPERTIES:
-:BEAMER_col: 0.45
+:BEAMER_col: 0.5
 :END:
 [[file:figs/example_MYT1.jpg]]
 #+BEGIN_CENTER
@@ -127,7 +127,7 @@ MYT1 deletion
 #+END_CENTER
 **** Control
 :PROPERTIES:
-:BEAMER_col: 0.45
+:BEAMER_col: 0.5
 :END:
 [[file:figs/example_control.jpg]]
 #+BEGIN_CENTER
@@ -166,11 +166,11 @@ The data and tools for programatic and manual access to the data are made availa
 \heading{The JUMP Cell Painting can serve as a resource to obtain candidate genes to find further insight on genes or proteins of interest.}
 \heading{High throughput analyses require biological expertise to provide novel insights, but provide an unprecedented opportunity to achieve a wholistic undersanding of the cell and human diseases.}
 \heading{Our querying systems can aid scientists to accelerate their biological discoveries by providing means to interpret features and listing genes with similar phenotypes}
-\heading{Tools that make JUMP-CP data accessible to everyone }
 
 *** References
 :PROPERTIES:
 :BEAMER_env: block
 :END:
 
+# Reminder: You can export these as local-bib.bib using (citar-export-local-bib-file)
 #+print_bibliography:
