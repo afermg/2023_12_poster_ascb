@@ -134,24 +134,6 @@ MYT1 deletion
 Control
 #+END_CENTER
 
-*** Conclusions :B_exampleblock:
-:PROPERTIES:
-:BEAMER_env: alertblock
-:END:
-\heading{The JUMP Cell Painting can serve as a resource to obtain candidate genes to find further insight on genes or proteins of interest.}
-\heading{We provide web interfaces to retrieve important from gene queries.}
-\heading{Even high throughput analyses require biological expertise to provide novel insights.}
-
-*** Available resources
-:PROPERTIES:
-:BEAMER_env: block
-:END:
-| Dataset  | Similarity      | Outstanding features | Description         |
-|----------+-----------------+----------------------+---------------------|
-| ORF      | [[https://broad.io/orf][broad.io/orf]]    | [[https://broad.io/orf_feature][broad.io/orf_feature]] | Gene overexpression |
-| CRISPR   | [[https://broad.io/crispr][broad.io/crispr]] | [WIP]                | Gene knock-out      |
-| Compound | [WIP]           | [WIP]                | Chemical compounds  |
-
 *** Ongoing research
 :PROPERTIES:
 :BEAMER_env: block
@@ -164,9 +146,27 @@ Control
 | CTDNEP1                       | Nuclear structure |
 | MMP9                          | Alzheimer         |
 
-#+BEGIN_QUOTE
-More info and updates at [[http://broad.io/explore-jump][broad.io/explore-jump]] for tools and [[https://broad.io/jump-cellpainting][broad.io/jump-cellpainting]] for more information.
-#+END_QUOTE
+*** Available resources
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+
+| Dataset  | Genes ranking   | Features             | Description         |
+|----------+-----------------+----------------------+---------------------|
+| ORF      | [[https://broad.io/orf][broad.io/orf]]    | [[https://broad.io/orf_feature][broad.io/orf_feature]] | Gene overexpression |
+| CRISPR   | [[https://broad.io/crispr][broad.io/crispr]] | [WIP]                | Gene knock-out      |
+| Compound | [WIP]           | [WIP]                | Chemical compounds  |
+
+The data and tools for programatic and manual access to the data are made available so people can explore and train models [cite:@chandrasekaranImagebasedProfilingDrug2021]. Refer to [[http://broad.io/explore-jump][broad.io/explore-jump]] for tools and [[https://broad.io/jump-cellpainting][broad.io/jump-cellpainting]] for more information.
+
+*** Conclusions :B_exampleblock:
+:PROPERTIES:
+:BEAMER_env: alertblock
+:END:
+\heading{The JUMP Cell Painting can serve as a resource to obtain candidate genes to find further insight on genes or proteins of interest.}
+\heading{High throughput analyses require biological expertise to provide novel insights, but provide an unprecedented opportunity to achieve a wholistic undersanding of the cell and human diseases.}
+\heading{Our querying systems can aid scientists to accelerate their biological discoveries by providing means to interpret features and listing genes with similar phenotypes}
+\heading{Tools that make JUMP-CP data accessible to everyone }
 
 *** References
 :PROPERTIES:
