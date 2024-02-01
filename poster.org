@@ -44,7 +44,7 @@
 *** Abstract
 With the Cell Painting assay we quantify cell morphology using six dyes to stain eight cellular components: Nucleus, mitochondria, endoplasmic reticulum, nucleoli, cytoplasmic RNA, actin, golgi aparatus, and plasma membrane. After high-throughput fluorescence microscopy, image analysis algorithms then extract thousands of morphological features from each single cell’s image. By comparing of these “profiles” we can can uncover new relationships among genetic and chemical perturbations.
 
-This year, the JUMP-CP Consortium (Joint Undertaking for Morphological Profiling-Cell Painting) released the first public high-throughput dataset with over 140,000 genetic and chemical perturbations [cite:@chandrasekaranJUMPCellPainting2023].
+The JUMP-CP Consortium (Joint Undertaking for Morphological Profiling-Cell Painting) released the first public high-throughput dataset with over 140,000 genetic and chemical perturbations [cite:@chandrasekaranJUMPCellPainting2023].
 
 Here, we describe how this data can now be used to answer many biological questions. Researchers can pick any gene of interest and find what morphological phenotypes are induced when it is knocked-out or overexpressed and what genes produce a similar morphological profile when altered, uncovering functional relationships. Novel software tools developed for this dataset empower biologists to make discoveries of their own, and we show that mining this dataset can yield novel insights into current and relevant biological questions.
 
@@ -58,18 +58,17 @@ Here, we describe how this data can now be used to answer many biological questi
 \heading{Build a stepping stone for a universal and accessible framework against which biologists can validate cell phenotypes.}
 
 *** We use data from the Cell Painting assay, in which eight cellular components are stained using six dyes and imaged in five channels
-#+ATTR_LATEX: :width 0.8\textwidth
+#+ATTR_LATEX: :width 0.9\textwidth
 [[file:figs/cellpainting.png]]
 
+*** Morphological profiles were generated at a high-throughput scale
+We generated and preprocessed a database composed of thousands of cell painting experiments.
+[[file:figs/cell_painting_overview.png]]
 
 ** @@latex:@@ :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.3
 :END:
-
-*** Morphological profiles were generated at a high-throughput scale
-We generated and preprocessed a database composed of thousands of cell painting experiments.
-[[file:figs/cell_painting_overview.png]]
 
 *** We generated a reference dataset for cells and features that indicates clustered groups of genes
 :PROPERTIES:
